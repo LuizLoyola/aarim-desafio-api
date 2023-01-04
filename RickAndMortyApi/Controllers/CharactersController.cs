@@ -27,7 +27,7 @@ public class CharactersController : ControllerBase
         var characters = await CharactersService.GetCharactersAsync();
 
         return Ok(characters.Where(c =>
-            c.Status == CharacterStatus.Unknown &&
+            c.Status == Status.Unknown &&
             // don't know if is Alien or alien, use insensitive comparison
             string.Equals(c.Species, "Alien", StringComparison.CurrentCultureIgnoreCase) &&
             c.Episode.Count > 1
