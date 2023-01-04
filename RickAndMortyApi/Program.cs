@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 
 // inject services
-builder.Services.AddScoped<ICharactersService, CharactersService>();
+builder.Services.AddSingleton<ICharactersService, CharactersService>();
 
 var app = builder.Build();
 
