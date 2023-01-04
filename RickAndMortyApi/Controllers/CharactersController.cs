@@ -27,9 +27,9 @@ public class CharactersController : ControllerBase
         var characters = await CharactersService.GetCharactersAsync();
 
         return Ok(characters.Where(c =>
-            c.Status == Status.Unknown &&
-            // don't know if is Alien or alien, use insensitive comparison
-            string.Equals(c.Species, "Alien", StringComparison.CurrentCultureIgnoreCase) &&
+            // don't know the casing, use insensitive comparison
+            string.Equals(c.Status, "unknown", StringComparison.CurrentCultureIgnoreCase) &&
+            string.Equals(c.Species, "alien", StringComparison.CurrentCultureIgnoreCase) &&
             c.Episode.Count > 1
         ));
     }

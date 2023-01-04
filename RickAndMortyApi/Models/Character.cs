@@ -8,15 +8,11 @@ public class Character
 {
     public int Id { get; set; } //	The id of the character.
     public string Name { get; set; } //	The name of the character.
-
-    [JsonConverter(typeof(StringEnumConverter))]
-    public Status Status { get; set; } //	The status of the character ('Alive', 'Dead' or 'unknown').
-
+    public string Status { get; set; } //	The status of the character ('Alive', 'Dead' or 'unknown').
     public string Species { get; set; } //	The species of the character.
     public string Type { get; set; } //	The type or subspecies of the character.
 
-    [JsonConverter(typeof(StringEnumConverter))]
-    public Gender Gender { get; set; } //	The gender of the character ('Female', 'Male', 'Genderless' or 'unknown').
+    public string Gender { get; set; } //	The gender of the character ('Female', 'Male', 'Genderless' or 'unknown').
 
     public Origin Origin { get; set; } //	Name and link to the character's origin location.
     public Location Location { get; set; } //	Name and link to the character's last known location endpoint.
